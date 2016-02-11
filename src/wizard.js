@@ -9,7 +9,8 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
             onFinish: '&',
             hideIndicators: '=',
             editMode: '=',
-            name: '@'
+            name: '@',
+            newContext: '='
         },
         templateUrl: function(element, attributes) {
             return attributes.template || "wizard.html";
@@ -335,6 +336,8 @@ angular.module('mgo-angular-wizard').directive('wizard', function() {
                 //go to first step
                 this.goTo(0);
             };
+
+            $scope.newContext = this;
         }]
     };
 });
